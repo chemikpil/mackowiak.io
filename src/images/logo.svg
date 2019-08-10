@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo </title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Logo" transform="translate(-287.000000, -287.000000)">
+            <g id="Logo-" transform="translate(287.000000, 287.000000)">
+                <g id="Logo">
+                    <rect id="Rectangle" fill="#E9E9E9" x="0" y="0" width="512" height="512"></rect>
+                    <rect id="Rectangle" fill="#1A1A1A" x="22.7555556" y="22.7555556" width="466.488889" height="466.488889"></rect>
+                    <path d="M101.376,312.888889 L101.376,171.167289 L129.8432,171.167289 L169.984,290.975289 L210.1248,171.167289 L238.592,171.167289 L238.592,312.888889 L222.8224,312.888889 L222.8224,187.960889 L219.9552,187.960889 L178.7904,307.768889 L161.1776,307.768889 L120.0128,187.960889 L117.1456,187.960889 L117.1456,312.888889 L101.376,312.888889 Z M273.408,312.888889 L273.408,171.167289 L301.8752,171.167289 L342.016,290.975289 L382.1568,171.167289 L410.624,171.167289 L410.624,312.888889 L394.8544,312.888889 L394.8544,187.960889 L391.9872,187.960889 L350.8224,307.768889 L333.2096,307.768889 L292.0448,187.960889 L289.1776,187.960889 L289.1776,312.888889 L273.408,312.888889 Z" id="MM" fill="#E9E9E9"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
