@@ -14,11 +14,16 @@ const Main = styled.main`
     height: 100vh;
     margin: 0 auto;
 
+    font-family: var(--text-font-family);
+    font-size: var(--text-mobile-text-size);
+
     @media only screen and (min-width: 1024px) {
         max-width: var(--rs-tablet);
         
         border-left: 1px solid var(--bg-gray-color);
         border-right: 1px solid var(--bg-gray-color);
+
+        font-size: var(--text-desktop-text-size);
     }
 
     @media only screen and (min-width: 1440px) {

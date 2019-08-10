@@ -28,6 +28,6 @@ const Header = styled.header`
         width: 1440px;
         padding: 50px 0 0 68px;
     }
-`
+`;
 
 export default ({ children }: Props) => <Header>{children}</Header>;

@@ -24,6 +24,16 @@ module.exports = {
         icon: `src/images/icon.png`
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [{
+          family: `Titillium Web`,
+          variants: [`300`, `400`, `700`],
+          subsets: [`latin-ext`]
+        }]
+      }
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

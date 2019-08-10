@@ -192,6 +192,7 @@ const GlobalStyles = createGlobalStyle`
         --bg-gray-color: #E9E9E9;
 
         --text-primary-color: #1A1A1A;
+        --text-gray-color: #E9E9E9;
         --text-desktop-title-size: 6rem;
         --text-mobile-title-size: 3.2rem;
         --text-desktop-subtitle-size: 2.4rem;
@@ -230,6 +231,8 @@ const GlobalStyles = createGlobalStyle`
         left: 50%;
 
         background-color: var(--bg-gray-color);
+
+        z-index: -1;
     }
 `;
 
