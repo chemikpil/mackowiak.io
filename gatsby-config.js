@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `mackowiak.io`,
+    title: `Michał Maćkowiak`,
+    titleTemplate: `Michał Maćkowiak · %s`,
     description: `Michal Mackowiak's personal site`,
-    author: `@chemikpil`
+    author: `@chemikpil`,
+    twitterUsername: `@chemikpil`,
+    url: `https://mackowiak.io`,
+    image: `/images/icon.png`
   },
   plugins: [
     {

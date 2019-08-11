@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-import Layout from "../components/Layout";
+import Layout from '../components/Layout';
+import SEO from '../components/SEO';
 
 const Content = styled.div`
 	position: relative;
@@ -100,6 +101,7 @@ const Title = styled.h1`
 
 const IndexPage = () => (
     <Layout>
+		<SEO title='Personal site' />
 		<Content>
         	<Title>Michał Maćkowiak</Title>
 			<span>Soon...</span>
