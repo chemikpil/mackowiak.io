@@ -42,6 +42,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-brotli`
+    `gatsby-plugin-brotli`,
+    `gatsby-plugin-styled-components`
   ]
 }
