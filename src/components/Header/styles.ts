@@ -26,3 +26,9 @@ export const Header = styled.header`
         padding: 50px 68px 0 68px;
     }
 `;
+
+export const Menu = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 64px;
+`;

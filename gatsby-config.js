@@ -6,7 +6,12 @@ module.exports = {
     author: `@chemikpil`,
     twitterUsername: `@chemikpil`,
     url: `https://mackowiak.io`,
-    image: `/images/icon.png`
+    image: `/images/icon.png`,
+    social: {
+      twitter: `https://twitter.com/chemikpil`,
+      instagram: `https://www.instagram.com/chemikpil/`,
+      github: `https://github.com/chemikpil`
+    }
   },
   plugins: [
     {

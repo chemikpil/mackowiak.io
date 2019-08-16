@@ -244,6 +244,11 @@ const GlobalStyles = createGlobalStyle`
 
         z-index: -1;
     }
+
+    a, a:visited, a:hover {
+        color: inherit;
+        text-decoration: none;
+    }
 `;
 
 export const Main = styled.main`

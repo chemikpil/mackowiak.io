@@ -119,7 +119,7 @@ export const Summary = styled.h2`
 	@media only screen and (min-width: 1024px) {
 		display: block;
 		position: relative;
-		top: -9px;		
+		top: -10px;		
 		width: 50%;
 		align-self: flex-start;
 		padding: 0;
@@ -133,5 +133,9 @@ export const Summary = styled.h2`
 		& > span:not(:first-child) {
 			margin-left: 15px;
 		}
+	}
+
+	@media only screen and (min-width: 1440px) {
+		top: -6px;
 	}
 `;

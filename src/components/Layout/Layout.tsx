@@ -2,8 +2,7 @@ import React from 'react';
 
 import GlobalStyles, { Main } from './styles';
 import Header from '../Header';
-import Logo from '../Logo';
-import { MenuIcon } from '../Menu';
+import Footer from '../Footer';
 
 interface Props {
     children: React.ReactNode
@@ -12,11 +11,9 @@ interface Props {
 const Layout = ({ children }: Props) => (
     <>
         <GlobalStyles />
-        <Header>
-            <Logo />
-            <MenuIcon />
-        </Header>
+        <Header />
         <Main>{children}</Main>
+        <Footer />
     </>
 );
 
