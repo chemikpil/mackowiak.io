@@ -33,7 +33,7 @@ module.exports = {
       options: {
         fonts: [{
           family: `Titillium Web`,
-          variants: [`300`, `400`, `700`],
+          variants: [`300`, `700`],
           subsets: [`latin-ext`]
         }]
       }

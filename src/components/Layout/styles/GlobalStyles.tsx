@@ -217,6 +217,7 @@ const GlobalStyles = createGlobalStyle`
         color: var(--text-primary-color);
         font-size: var(--text-desktop-text-size);
         font-family: var(--text-font-family);
+        font-weight: 300;
     }
 
     body:before {

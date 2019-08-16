@@ -74,7 +74,7 @@ const Content = styled.div`
 const Title = styled.h1`
     margin: 0 auto;
 
-	font-size: 4rem;
+	font-size: 3.5rem;
 	font-weight: 300;
     text-align: center;
 	word-spacing: 15px;

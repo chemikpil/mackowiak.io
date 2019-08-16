@@ -18,6 +18,8 @@ const Header = styled.header`
     padding: 20px;
     box-sizing: border-box;
 
+    z-index: 2;
+
     @media only screen and (min-width: 1024px) {
         margin-left: -512px;
         width: 1024px;
@@ -26,7 +28,7 @@ const Header = styled.header`
     @media only screen and (min-width: 1440px) {
         margin-left: -720px;
         width: 1440px;
-        padding: 50px 0 0 68px;
+        padding: 50px 68px 0 68px;
     }
 `;
 
