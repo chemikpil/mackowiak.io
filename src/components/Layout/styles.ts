@@ -207,20 +207,29 @@ const GlobalStyles = createGlobalStyle`
         --rs-desktop-half: 520px;
     }
 
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
     body {
         margin: 0;
         padding: 0;
         height: 100vh;
 
         background-color: var(--bg-primary-color);
-
+        
+        font-size: var(--text-mobile-text-size);
         color: var(--text-primary-color);
-        font-size: var(--text-desktop-text-size);
         font-family: var(--text-font-family);
         font-weight: 300;
+
+        @media only screen and (min-width: 1024px) {
+            font-size: var(--text-desktop-text-size);
+        }
     }
 
-    body:before {
+    html:before {
         content: '';
 
         display: block;

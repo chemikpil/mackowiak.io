@@ -25,6 +25,7 @@ export const Content = styled.div`
 		text-transform: uppercase;
 
 		opacity: 0.04;
+		z-index: -1;
 
 		@media only screen and (min-width: 660px) {
 			font-size: 7rem;
@@ -44,15 +45,15 @@ export const Content = styled.div`
 	&:before {
 		content: 'frontend';
 		left: 0;
-		margin-top: -55px;
+		margin-top: -45px;
 		text-align: right;
 
 		@media only screen and (min-width: 660px) {
-			margin-top: -80px;
+			margin-top: -70px;
 		}
 
 		@media only screen and (min-width: 1024px) {
-			margin-top: -100px;
+			margin-top: -90px;
 		}
 
 		@media only screen and (min-width: 1440px) {
@@ -68,7 +69,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h1`
-    margin: 0 auto;
+    margin: 15px auto;
 
 	font-size: 3.5rem;
 	font-weight: 300;
@@ -81,6 +82,7 @@ export const Title = styled.h1`
     }
 
     @media only screen and (min-width: 1024px) {
+		margin: 0 auto;
         width: 900px;
 		margin-left: -40px;
 
@@ -93,4 +95,43 @@ export const Title = styled.h1`
 
         font-size: 14.5rem;
     }
+`;
+
+export const Summary = styled.h2`
+	height: 0;
+	margin: 0;
+
+	display: flex;
+	justify-content: space-evenly;
+    flex-wrap: wrap;
+	
+	line-height: 2.0rem;
+	text-align: center;
+
+	font-size: var(--text-mobile-text-size);
+	font-weight: 300;
+
+	& > span {
+		white-space: nowrap;
+		padding: 0 6px;
+	}
+
+	@media only screen and (min-width: 1024px) {
+		display: block;
+		position: relative;
+		top: -9px;		
+		width: 50%;
+		align-self: flex-start;
+		padding: 0;
+
+		font-size: var(--text-desktop-text-size);
+
+		& > span {
+			padding: 0;
+		}
+
+		& > span:not(:first-child) {
+			margin-left: 15px;
+		}
+	}
 `;
