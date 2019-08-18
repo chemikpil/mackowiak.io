@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const startAnimation = keyframes`
+    from { opacity: 0; }
+    to { opacity: 1; }
+`;
 
 export const Header = styled.header`
     --margin-left: -50%;
@@ -28,6 +33,8 @@ export const Header = styled.header`
     padding: var(--padding);
     box-sizing: border-box;
 
+    opacity: 0;
+    animation: ${startAnimation} 0.5s 2s ease forwards;
     z-index: 2;
 `;
 

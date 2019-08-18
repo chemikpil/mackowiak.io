@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const startAnimation = keyframes`
+	from { opacity: 0; }
+	to { opacity: 1; }
+`;
 
 export const Content = styled.div`
 	position: relative;
@@ -9,6 +14,9 @@ export const Content = styled.div`
 	align-items: center;
 
 	height: 100%;
+
+	animation: ${startAnimation} 0.5s 1s ease forwards;
+	opacity: 0;
 
 	&:before,
 	&:after {

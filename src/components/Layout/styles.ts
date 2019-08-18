@@ -1,4 +1,4 @@
-import styled, { css, createGlobalStyle } from 'styled-components';
+import styled, { css, createGlobalStyle, keyframes } from 'styled-components';
 
 const normalize = css`
     html {
@@ -225,26 +225,15 @@ const GlobalStyles = createGlobalStyle`
         font-weight: 300;
     }
 
-    html:before {
-        content: '';
-
-        display: block;
-        width: 1px;
-        height: 100vh;
-
-        position: absolute;
-        top: 0;
-        left: 50%;
-
-        background-color: var(--bg-gray-color);
-
-        z-index: -1;
-    }
-
     a, a:visited, a:hover {
         color: inherit;
         text-decoration: none;
     }
+`;
+
+const startAnimation = keyframes`
+    from { height: 0; }
+    to { height: 100vh; }
 `;
 
 export const Main = styled.main`
@@ -263,7 +252,7 @@ export const Main = styled.main`
     }
 
     max-width: var(--max-width);
-    height: 100vh;
+    height: 0;
     margin: 0 auto;
 
     border-left: var(--border-left);
@@ -271,6 +260,25 @@ export const Main = styled.main`
 
     font-family: var(--text-font-family);
     font-size: var(--text-size);
+
+    animation: ${startAnimation} 1s ease forwards;
+
+    &:before {
+        content: '';
+
+        display: block;
+        width: 1px;
+        height: 100vh;
+
+        position: absolute;
+        top: 0;
+        left: 50%;
+
+        background-color: var(--bg-gray-color);
+
+        animation: ${startAnimation} 1s ease forwards;
+        z-index: -1;
+    }
 `;
 
 export default GlobalStyles;
