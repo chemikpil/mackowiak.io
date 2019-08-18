@@ -2,6 +2,21 @@ import styled from 'styled-components';
 import { SocialList } from '../Social/styles';
 
 export const Footer = styled.footer`
+    --margin-left: -50%;
+    --width: 100%;
+    --padding: 20px;
+
+    @media only screen and (min-width: 1024px) {
+        --margin-left: -512px;
+        --width: 1024px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        --margin-left: -720px;
+        --width: 1440px;
+        --padding: 0 68px 50px 68px;
+    }
+
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -9,23 +24,12 @@ export const Footer = styled.footer`
     display: flex;
     justify-content: flex-end;
 
-    margin-left: -50%;
-    width: 100%;
-    padding: 20px;
+    margin-left: var(--margin-left);
+    width: var(--width);
+    padding: var(--padding);
     box-sizing: border-box;
 
     z-index: 2;
-
-    @media only screen and (min-width: 1024px) {
-        margin-left: -512px;
-        width: 1024px;
-    }
-
-    @media only screen and (min-width: 1440px) {
-        margin-left: -720px;
-        width: 1440px;
-        padding: 0 68px 50px 68px;
-    }
 
     & > ${SocialList} {
         font-size: 2rem;

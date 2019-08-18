@@ -95,11 +95,12 @@ export const Container = styled.div`
         }
 
         & > ${CenterElement} {
-            top: calc(0% - 1px);
+            top: calc(0% - 2px);
 
             &:before,
             &:after {
                 height: 100%;
+                border-width: 2px;
             }
         }
 

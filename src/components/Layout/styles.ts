@@ -193,18 +193,18 @@ const GlobalStyles = createGlobalStyle`
 
         --text-primary-color: #1A1A1A;
         --text-gray-color: #E9E9E9;
-        --text-desktop-title-size: 6rem;
-        --text-mobile-title-size: 3.2rem;
-        --text-desktop-subtitle-size: 2.4rem;
-        --text-mobile-subtitle-size: 2.0rem;
-        --text-desktop-text-size: 1.4rem;
-        --text-mobile-text-size: 1.2rem;
+
+        --text-title-size: 3.2rem;
+        --text-subtitle-size: 2.0rem;
+        --text-size: 1.2rem;
+
         --text-font-family: 'Titillium Web', sans-serif;
 
-        --rs-tablet: 821px;
-        --rs-tablet-half: 410px;
-        --rs-desktop: 1041px;
-        --rs-desktop-half: 520px;
+        @media only screen and (min-width: 1024px) {
+            --text-title-size: 6rem;
+            --text-subtitle-size: 2.4rem;
+            --text-size: 1.4rem;
+        }
     }
 
     * {
@@ -219,14 +219,10 @@ const GlobalStyles = createGlobalStyle`
 
         background-color: var(--bg-primary-color);
         
-        font-size: var(--text-mobile-text-size);
+        font-size: var(--text-size);
         color: var(--text-primary-color);
         font-family: var(--text-font-family);
         font-weight: 300;
-
-        @media only screen and (min-width: 1024px) {
-            font-size: var(--text-desktop-text-size);
-        }
     }
 
     html:before {
@@ -252,25 +248,29 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export const Main = styled.main`
-    max-width: 100%;
+    --max-width: 100%;
+    --border-left: none;
+    --border-right: none;
+
+    @media only screen and (min-width: 1024px) {
+        --max-width: 821px;
+        --border-left: 1px solid var(--bg-gray-color);
+        --border-right: 1px solid var(--bg-gray-color);
+    }
+    
+    @media only screen and (min-width: 1440px) {
+        --max-width: 1041px;
+    }
+
+    max-width: var(--max-width);
     height: 100vh;
     margin: 0 auto;
 
+    border-left: var(--border-left);
+    border-right: var(--border-right);
+
     font-family: var(--text-font-family);
-    font-size: var(--text-mobile-text-size);
-
-    @media only screen and (min-width: 1024px) {
-        max-width: var(--rs-tablet);
-        
-        border-left: 1px solid var(--bg-gray-color);
-        border-right: 1px solid var(--bg-gray-color);
-
-        font-size: var(--text-desktop-text-size);
-    }
-
-    @media only screen and (min-width: 1440px) {
-        max-width: var(--rs-desktop);
-    }
+    font-size: var(--text-size);
 `;
 
 export default GlobalStyles;
