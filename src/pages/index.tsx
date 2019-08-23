@@ -7,7 +7,7 @@ const IndexPage = () => (
     <>
 		<SEO title='Personal site' />
 		<Content>
-        	<Title>Michał Maćkowiak</Title>
+			<Title>Michał Maćkowiak</Title>
 			<Summary>
 				<span>Frontend Developer</span>
 				<span>Amateur Photographer</span>

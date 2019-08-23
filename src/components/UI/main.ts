@@ -1,11 +1,45 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
-const startAnimation = keyframes`
-	from { opacity: 0; }
-	to { opacity: 1; }
+const textAnimationKeyframes = keyframes`
+	0% {
+		opacity: 1;
+		background-position-x: 100%;
+		color: transparent;
+	}
+
+	40% {
+		opacity: 1;
+		background-position-x: 0%;
+		color: transparent;
+	}
+
+	60% {
+		opacity: 1;
+		background-position-x: 0%;
+		color: var(--animation-color);
+	}
+
+	100% {
+		opacity: 1;
+		background-position-x: -100%;
+		color: var(--animation-color);
+	}
+`;
+
+const textAnimationStyles = css`
+	background: linear-gradient(
+		to right,
+		var(--animation-color) 0%, var(--animation-color) 50%,
+		transparent 50%, transparent 100%
+	);
+	background-size: 200% 100%;
+
+	animation: ${textAnimationKeyframes} 1s 1s ease-in forwards;
+	opacity: 0;
 `;
 
 export const Content = styled.div`
+	--animation-color: var(--text-gray-color);
 	position: relative;
 
     display: flex;
@@ -14,9 +48,6 @@ export const Content = styled.div`
 	align-items: center;
 
 	height: 100%;
-
-	animation: ${startAnimation} 0.5s 1s ease forwards;
-	opacity: 0;
 
 	&:before,
 	&:after {
@@ -43,14 +74,15 @@ export const Content = styled.div`
 		width: 50%;
 		overflow: hidden;
 
-		color: var(--text-primary-color);
+		color: var(--text-gray-color);
 		font-size: var(--font-size);
 		font-weight: 700;
 		text-indent: var(--text-indent);
 		text-transform: uppercase;
 
-		opacity: 0.04;
 		z-index: -1;
+
+		${textAnimationStyles};
 	}
 
 	&:before {
@@ -84,7 +116,8 @@ export const Content = styled.div`
 export const Title = styled.h1`
 	--font-size: 3.5rem;
 	--width: 100%;
-	--margin: 15px auto;
+	--margin: 35px auto 15px;
+	--animation-color: var(--text-primary-color);
 
 	@media only screen and (min-width: 370px) {
 		--font-size: 4.2rem;
@@ -96,13 +129,13 @@ export const Title = styled.h1`
 
 	@media only screen and (min-width: 1024px) {
 		--font-size: 11.5rem;
-		--margin: 0 auto 0 -40px;
+		--margin: 20px auto 0 -40px;
 		--width: 900px;
 	}
 
 	@media only screen and (min-width: 1440px) {
 		--font-size: 14.5rem;
-		--margin: 0 auto 0 -45px;
+		--margin: 20px auto 0 -45px;
 		--width: 1130px;
 	}
 
@@ -114,17 +147,21 @@ export const Title = styled.h1`
     text-align: center;
 	word-spacing: 15px;
     white-space: nowrap;
+
+	${textAnimationStyles};
 `;
 
 export const Summary = styled.h2`
-	height: 0;
+	--animation-color: var(--text-primary-color);
+
+	height: 20px;
 	margin: 0;
 
 	display: flex;
 	justify-content: space-evenly;
     flex-wrap: wrap;
 	
-	line-height: 2.0rem;
+	line-height: 2rem;
 	text-align: center;
 
 	font-size: var(--text-size);
@@ -155,4 +192,6 @@ export const Summary = styled.h2`
 	@media only screen and (min-width: 1440px) {
 		top: -6px;
 	}
+
+	${textAnimationStyles};
 `;
