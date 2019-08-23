@@ -39,7 +39,13 @@ export const Header = styled.header`
 `;
 
 export const Menu = styled.div`
+    --justify: flex-end;
+
+    @media only screen and (min-width: 1024px) {
+        --justify: center;
+    }
+
     display: flex;
-    justify-content: center;
+    justify-content: var(--justify);
     width: 64px;
 `;

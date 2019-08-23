@@ -86,6 +86,10 @@ export const Title = styled.h1`
 	--width: 100%;
 	--margin: 15px auto;
 
+	@media only screen and (min-width: 370px) {
+		--font-size: 4.2rem;
+	}
+
 	@media only screen and (min-width: 660px) {
         --font-size: 8rem;
     }

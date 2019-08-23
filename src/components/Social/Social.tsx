@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitterSquare, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTwitterSquare, faInstagram, faGithub, fa500px } from '@fortawesome/free-brands-svg-icons';
 
 import  { SocialList } from './styles';
 
@@ -17,6 +17,10 @@ export const Github = () => (
     <FontAwesomeIcon icon={faGithub} size='1x' />
 );
 
+export const S500px = () => (
+    <FontAwesomeIcon icon={fa500px} size='1x' />
+);
+
 export default () => {
     const { site: { siteMetadata: { social } } } = useStaticQuery(
         graphql`
@@ -27,6 +31,7 @@ export default () => {
                             twitter
                             github
                             instagram
+                            s500px
                         }
                     }
                 }
@@ -36,9 +41,10 @@ export default () => {
 
     return (
         <SocialList>
-            {social && social.instagram && <li><a href={social.instagram}><Instagram /></a></li>}
-            {social && social.github && <li><a href={social.github}><Github /></a></li>}
-            {social && social.twitter && <li><a href={social.twitter}><Twitter /></a></li>}
+            {social && social.instagram && <li><a href={social.instagram} target='_blank'><Instagram /></a></li>}
+            {social && social.github && <li><a href={social.github} target='_blank'><Github /></a></li>}
+            {social && social.twitter && <li><a href={social.twitter} target='_blank'><Twitter /></a></li>}
+            {social && social.s500px && <li><a href={social.s500px} target='_blank'><S500px /></a></li>}
         </SocialList>
     )
 };

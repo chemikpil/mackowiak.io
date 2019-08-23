@@ -10,7 +10,8 @@ module.exports = {
     social: {
       twitter: `https://twitter.com/chemikpil`,
       instagram: `https://www.instagram.com/chemikpil/`,
-      github: `https://github.com/chemikpil`
+      github: `https://github.com/chemikpil`,
+      s500px: `https://500px.com/chemikpil`
     }
   },
   plugins: [

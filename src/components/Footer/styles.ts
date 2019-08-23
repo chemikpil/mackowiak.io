@@ -10,10 +10,12 @@ export const Footer = styled.footer`
     --margin-left: -50%;
     --width: 100%;
     --padding: 20px;
+    --justify-content: center;
 
     @media only screen and (min-width: 1024px) {
         --margin-left: -512px;
         --width: 1024px;
+        --justify-content: flex-end;
     }
 
     @media only screen and (min-width: 1440px) {
@@ -27,7 +29,7 @@ export const Footer = styled.footer`
     left: 50%;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: var(--justify-content);
 
     margin-left: var(--margin-left);
     width: var(--width);
