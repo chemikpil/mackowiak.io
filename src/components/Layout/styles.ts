@@ -191,8 +191,22 @@ const GlobalStyles = createGlobalStyle`
         --bg-primary-color: #F7F7F7;
         --bg-gray-color: #E9E9E9;
 
-        --text-primary-color: #1A1A1A;
+        --text-primary-color: #282828;
         --text-gray-color: #E9E9E9;
+
+        --logo-primary: #282828;
+        --logo-secondary: #575757;
+
+        @media (prefers-color-scheme: dark) {
+            --bg-primary-color: #282828;
+            --bg-gray-color: #2F2F2F;
+
+            --text-primary-color: #F7F7F7;
+            --text-gray-color: #2F2F2F;
+
+            --logo-primary: #F7F7F7;
+            --logo-secondary: #BBBBBB;
+        }
 
         --text-title-size: 3.2rem;
         --text-subtitle-size: 2.0rem;
@@ -238,13 +252,9 @@ const startAnimation = keyframes`
 
 export const Main = styled.main`
     --max-width: 100%;
-    --border-left: none;
-    --border-right: none;
 
     @media only screen and (min-width: 1024px) {
         --max-width: 821px;
-        --border-left: 1px solid var(--bg-gray-color);
-        --border-right: 1px solid var(--bg-gray-color);
     }
     
     @media only screen and (min-width: 1440px) {
@@ -254,9 +264,6 @@ export const Main = styled.main`
     max-width: var(--max-width);
     height: 0;
     margin: 0 auto;
-
-    border-left: var(--border-left);
-    border-right: var(--border-right);
 
     font-family: var(--text-font-family);
     font-size: var(--text-size);

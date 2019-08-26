@@ -31,7 +31,6 @@ export default () => {
                             twitter
                             github
                             instagram
-                            s500px
                         }
                     }
                 }
@@ -44,7 +43,6 @@ export default () => {
             {social && social.instagram && <li><a href={social.instagram} target='_blank'><Instagram /></a></li>}
             {social && social.github && <li><a href={social.github} target='_blank'><Github /></a></li>}
             {social && social.twitter && <li><a href={social.twitter} target='_blank'><Twitter /></a></li>}
-            {social && social.s500px && <li><a href={social.s500px} target='_blank'><S500px /></a></li>}
         </SocialList>
     )
 };

@@ -52,7 +52,7 @@ export const Content = styled.div`
 	&:before,
 	&:after {
 		--font-size: 5rem;
-		--text-indent: -15px;
+		--letter-spacing: normal;
 
 		@media only screen and (min-width: 660px) {
 			--font-size: 7rem;
@@ -60,12 +60,11 @@ export const Content = styled.div`
 
 		@media only screen and (min-width: 1024px) {
 			--font-size: 9rem;
-			--text-indent: -20px;
+			--letter-spacing: -4px;
 		}
 
 		@media only screen and (min-width: 1440px) {
 			--font-size: 11.5rem;
-			--text-indent: -30px;
 		}
 
 		position: absolute;
@@ -77,6 +76,7 @@ export const Content = styled.div`
 		color: var(--text-gray-color);
 		font-size: var(--font-size);
 		font-weight: 700;
+		letter-spacing: var(--letter-spacing);
 		text-indent: var(--text-indent);
 		text-transform: uppercase;
 
@@ -87,6 +87,7 @@ export const Content = styled.div`
 
 	&:before {
 		--margin-top: -45px;
+		--text-indent: -15px;
 
 		@media only screen and (min-width: 660px) {
 			--margin-top: -70px;
@@ -94,6 +95,7 @@ export const Content = styled.div`
 
 		@media only screen and (min-width: 1024px) {
 			--margin-top: -90px;
+			--text-indent: -6px;
 		}
 
 		@media only screen and (min-width: 1440px) {
@@ -104,12 +106,20 @@ export const Content = styled.div`
 		left: 0;
 		margin-top: var(--margin-top);
 		text-align: right;
+		text-indent: var(--text-indent);
 	}
 
 	&:after {
+		--text-indent: -15px;
+
+		@media only screen and (min-width: 1024px) {
+			--text-indent: -44px;
+		}
+
 		content: 'developer';
 		right: 0;
 		margin-top: -13px;
+		text-indent: var(--text-indent);
 	}
 `;
 

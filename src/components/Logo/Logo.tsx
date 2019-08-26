@@ -3,11 +3,13 @@ import { Link } from 'gatsby';
 
 import { Logo } from './styles';
 
-import LogoSrc from '../../images/logo.svg';
+import LogoSvg from '../../images/logo.svg';
 
 const LinkedLogo = () => (
     <Link to='/'>
-        <Logo src={LogoSrc} alt='Michał Maćkowiak' />
+        <Logo>
+            <LogoSvg />
+        </Logo>
     </Link>
 )
 
