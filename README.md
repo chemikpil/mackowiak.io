@@ -1,14 +1,14 @@
 # mackowiak.io
 
-My personal place in the internet
+My place in the internet
 
 ## 💻 Stack
 
-    * Next.js
-    * React.js
-    * Typescript
-    * Emotion.js
-    * TBD...
+-   Next.js
+-   React.js
+-   Typescript
+-   Emotion.js
+-   TBD...
 
 ---
 
