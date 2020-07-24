@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
-import styled from '@emotion/styled';
 import { Global, css } from '@emotion/core';
+import styled from 'theme/styled';
 
 const Content = styled.main`
     display: flex;
@@ -10,6 +10,8 @@ const Content = styled.main`
 
     width: 100vw;
     min-height: 100vh;
+    background: ${({ theme }) => theme.color.background};
+    transition: background 0.1s ease-in;
 `;
 
 type Props = {

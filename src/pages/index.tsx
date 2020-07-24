@@ -1,4 +1,6 @@
+import React from 'react';
 import Head from 'next/head';
+import styled from 'theme/styled';
 import { fetch } from 'utils/client';
 import { Layout } from '../components/Layout';
 import { Title } from '../components/Title';
@@ -14,13 +16,17 @@ export const getStaticProps = async () => {
     };
 };
 
+const Soon = styled.p`
+    color: ${({ theme }) => theme.color.text};
+`;
+
 type Props = {
     title: string;
     hello: string;
     who: string;
 };
 
-const Home = ({ title, hello }: Props) => {
+const Home = ({ title }: Props) => {
     return (
         <>
             <Head>
@@ -28,9 +34,8 @@ const Home = ({ title, hello }: Props) => {
             </Head>
             <Layout>
                 <header>
-                    <p>{hello}</p>
                     <Title>{title}</Title>
-                    <p>Soon ...</p>
+                    <Soon>Soon ...</Soon>
                 </header>
             </Layout>
         </>
