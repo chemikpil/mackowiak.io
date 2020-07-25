@@ -2,9 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import styled from 'theme/styled';
 import { fetch } from 'utils/client';
+import { HOME_QUERY } from '../queries/home';
 import { Layout } from '../components/Layout';
 import { Title } from '../components/Title';
-import { HOME_QUERY } from '../queries/home';
+import { Hello } from 'components/Hello';
+import { Who } from 'components/Who';
 
 export const getStaticProps = async () => {
     const { abouts } = await fetch(HOME_QUERY);
@@ -16,7 +18,13 @@ export const getStaticProps = async () => {
     };
 };
 
+const Header = styled.header`
+    display: grid;
+    grid-gap: 12px;
+`;
+
 const Soon = styled.h2`
+    margin: 40px 0 0;
     color: ${({ theme }) => theme.color.text};
 `;
 
@@ -26,17 +34,20 @@ type Props = {
     who: string;
 };
 
-const Home = ({ title }: Props) => {
+const Home = ({ title, hello, who }: Props) => {
     return (
         <>
             <Head>
                 <title>Michał Maćkowiak - My place in the internet</title>
             </Head>
             <Layout>
-                <header>
+                <Header>
+                    <Hello>{hello}</Hello>
                     <Title>{title}</Title>
-                    <Soon>Soon ...</Soon>
-                </header>
+                    <Who>{who}</Who>
+                </Header>
+
+                <Soon>soon...</Soon>
             </Layout>
         </>
     );

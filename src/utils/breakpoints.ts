@@ -1,4 +1,4 @@
-const CSS_DESKTOP_MEDIA_QUERY = `@media screen and (min-width: 992px)`;
-const CSS_TABLET_MEDIA_QUERY = `@media screen and (min-width: 768px)`;
+const CSS_DESKTOP = `@media screen and (min-width: 1024px)`;
+const CSS_TABLET = `@media screen and (min-width: 768px)`;
 
-export { CSS_DESKTOP_MEDIA_QUERY, CSS_TABLET_MEDIA_QUERY };
+export { CSS_DESKTOP, CSS_TABLET };
