@@ -20,17 +20,13 @@ type Props = {
 
 const Layout = ({ children }: Props) => (
     <>
-        <Head>
-            <link rel="preload" href="/titillium-web.woff2" as="font" />
-            <link rel="shortcut icon" href="/favicon.ico" />
-        </Head>
         <Global
             styles={css`
                 @font-face {
-                    font-family: 'Titillium';
-                    src: url('/titillium-web.woff2');
-                    font-weight: bold;
+                    font-family: 'Raleway';
+                    src: url('/raleway.ttf');
                     font-style: normal;
+                    font-weight: 100;
                     font-display: swap;
                 }
 
@@ -43,8 +39,7 @@ const Layout = ({ children }: Props) => (
                     padding: 0;
 
                     font-size: 1.6rem;
-                    font-family: Titillium, Helvetica, Arial, sans-serif;
-                    text-rendering: optimizelegibility;
+                    font-family: Raleway, Helvetica, Arial, sans-serif;
                 }
             `}
         />

@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
     };
 };
 
-const Soon = styled.p`
+const Soon = styled.h2`
     color: ${({ theme }) => theme.color.text};
 `;
 

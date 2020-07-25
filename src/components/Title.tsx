@@ -7,6 +7,7 @@ import {
 const Title = styled.h1`
     margin: 0;
     font-size: 4rem;
+    font-weight: 100;
     line-height: 1;
 
     color: ${({ theme }) => theme.color.text};
