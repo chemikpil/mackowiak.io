@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import Head from 'next/head';
 import { Global, css } from '@emotion/core';
 import styled from 'theme/styled';
 
