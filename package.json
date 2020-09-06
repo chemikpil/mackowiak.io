@@ -9,7 +9,8 @@
     "scripts": {
         "dev": "next dev",
         "build": "next build",
-        "start": "next start"
+        "start": "next start",
+        "plop": "plop"
     },
     "dependencies": {
         "graphql-request": "^2.0.0",
@@ -18,11 +19,12 @@
         "react-dom": "16.13.1"
     },
     "devDependencies": {
+        "@emotion/core": "^10.0.28",
+        "@emotion/styled": "^10.0.27",
         "@types/node": "^14.0.24",
         "@types/react": "^16.9.43",
         "emotion-theming": "^10.0.27",
-        "@emotion/core": "^10.0.28",
-        "@emotion/styled": "^10.0.27",
+        "plop": "^2.7.4",
         "typescript": "^3.9.7"
     }
 }
