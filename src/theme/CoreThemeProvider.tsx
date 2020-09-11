@@ -1,17 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'emotion-theming';
-import { ModeContext } from 'contexts/ModeContext';
-import { lightTheme } from './lightTheme';
-import { darkTheme } from './darkTheme';
+import { theme } from './theme';
 
 type Props = {
     children: React.ReactNode;
 };
 
 const CoreThemeProvider = ({ children }: Props) => {
-    const { mode } = React.useContext(ModeContext);
-    const theme = mode === 'light' ? lightTheme : darkTheme;
-
     return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 

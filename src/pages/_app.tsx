@@ -1,13 +1,13 @@
 import { AppProps } from 'next/app';
-import { ModeContextProvider } from 'contexts/ModeContext';
+import { ColorModeContextProvider } from 'theme/ColorMode/ColorModeProvider';
 import { CoreThemeProvider } from 'theme/CoreThemeProvider';
 
 const App = ({ Component, pageProps }: AppProps) => (
-    <ModeContextProvider>
+    <ColorModeContextProvider>
         <CoreThemeProvider>
             <Component {...pageProps} />
         </CoreThemeProvider>
-    </ModeContextProvider>
+    </ColorModeContextProvider>
 );
 
 export default App;
