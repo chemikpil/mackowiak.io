@@ -1,6 +1,8 @@
 import React from 'react';
 import { ColorMode } from './types';
-import { setColor } from './setColors';
+import { setColorModeVars } from './setColorModeVars';
+import { getInitialColorMode } from './getInitialColorMode';
+import { COLORS } from './colors';
 
 type ColorModeContextType = {
     colorMode: ColorMode;
@@ -20,7 +22,7 @@ const ColorModeContextProvider = ({
     children: React.ReactNode;
 }) => {
     const [colorMode, toggleColorModeState] = React.useState<ColorMode>(
-        ColorMode.light
+        undefined
     );
 
     const setColorMode = () => {
@@ -28,11 +30,16 @@ const ColorModeContextProvider = ({
             colorMode === ColorMode.light ? ColorMode.dark : ColorMode.light;
 
         toggleColorModeState(nextColorMode);
-        localStorage.setItem('colorMode', nextColorMode);
+        localStorage.setItem('color-mode', nextColorMode);
     };
 
     React.useEffect(() => {
-        setColor(colorMode);
+        const initialColorMode = getInitialColorMode();
+        toggleColorModeState(ColorMode[initialColorMode]);
+    }, []);
+
+    React.useEffect(() => {
+        colorMode && setColorModeVars(colorMode, COLORS);
     }, [colorMode]);
 
     return (

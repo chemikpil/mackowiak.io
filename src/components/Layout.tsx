@@ -12,6 +12,8 @@ const Content = styled.main`
     min-height: 100vh;
     background: ${({ theme }) => theme.color.background};
     transition: background 0.1s ease-in;
+
+    color: ${({ theme }) => theme.color.text};
 `;
 
 type Props = {
