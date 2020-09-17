@@ -1,5 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { ClientColorModeTag } from 'theme/ColorMode/ClientColorModeTag';
 
 class MyDocument extends Document {
     render() {
@@ -10,6 +11,7 @@ class MyDocument extends Document {
                     <link rel="shortcut icon" href="/favicon.ico" />
                 </Head>
                 <body>
+                    <ClientColorModeTag />
                     <Main />
                     <NextScript />
                 </body>
