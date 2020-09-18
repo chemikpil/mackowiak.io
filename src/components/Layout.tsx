@@ -26,7 +26,7 @@ const Layout = ({ children }: Props) => (
             styles={css`
                 @font-face {
                     font-family: 'Raleway';
-                    src: url('/raleway.ttf');
+                    src: url('/Raleway.ttf');
                     font-style: normal;
                     font-weight: 100;
                     font-display: swap;
