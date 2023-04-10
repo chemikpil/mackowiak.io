@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font */
+
+@font-face {
+    font-family: Strawford;
+    src: url("/fonts/strawford-regular.woff2") format('woff2'),
+        url("/fonts/strawford-regular.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Strawford;
+    src: url("/fonts/strawford-regularitalic.woff2") format('woff2'),
+        url("/fonts/strawford-regularitalic.woff") format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
