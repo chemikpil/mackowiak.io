@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
     Links,
     LiveReload,
@@ -5,19 +6,27 @@ import {
     Outlet,
     Scripts,
     ScrollRestoration,
+    useLoaderData,
 } from '@remix-run/react';
 import type {
     DataFunctionArgs,
     LinksFunction,
+    SerializeFrom,
     V2_MetaFunction,
 } from '@remix-run/node';
 import { getSeoMeta } from '~/utils/seo';
 import { getDomainUrl, getUrl } from '~/utils/misc';
-
 import stylesheet from './tailwind.css';
+import {
+    NonFlashOfWrongThemeElement,
+    ThemeProvider,
+    useTheme,
+} from '~/theme/ThemeProvider';
+import { getThemeSession } from '~/theme/theme.server';
 
 export const meta: V2_MetaFunction = ({ data }) => {
     const url = getUrl(data.requestInfo);
+
     return [
         { name: 'viewport', content: 'width=device-width,initial-scale=1' },
         ...getSeoMeta({
@@ -68,25 +77,35 @@ export const links: LinksFunction = () => [
     { rel: 'stylesheet', href: stylesheet },
 ];
 
+export type LoaderData = SerializeFrom<typeof loader>;
 export async function loader({ request }: DataFunctionArgs) {
+    const themeSession = await getThemeSession(request);
     return {
         requestInfo: {
             origin: getDomainUrl(request),
             path: new URL(request.url).pathname,
+            session: {
+                theme: themeSession.getTheme(),
+            },
         },
     };
 }
 
-export default function App() {
+function App() {
+    const data = useLoaderData<LoaderData>();
+    const [theme] = useTheme();
     return (
-        <html lang="en">
+        <html lang="en" className={clsx(theme)}>
             <head>
                 <meta charSet="utf-8" />
                 <title>Michal Mackowiak - My place in the internet</title>
                 <Meta />
                 <Links />
+                <NonFlashOfWrongThemeElement
+                    ssrTheme={Boolean(data.requestInfo.session.theme)}
+                />
             </head>
-            <body>
+            <body className="bg-white dark:bg-slate-800">
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />
@@ -95,3 +114,15 @@ export default function App() {
         </html>
     );
 }
+
+export default function AppWithProviders() {
+    const data = useLoaderData<LoaderData>();
+
+    return (
+        <ThemeProvider specifiedTheme={data.requestInfo.session.theme}>
+            <App />
+        </ThemeProvider>
+    );
+}
+
+// TODO: add CatchBoundary and ErrorBoundary

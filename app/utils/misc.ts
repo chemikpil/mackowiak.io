@@ -16,6 +16,23 @@ export function getDomainUrl(request: Request) {
 
 export function getUrl({ origin, path }: { origin?: string; path?: string }) {
     return removeTrailingSlash(
-        `${origin ?? 'https://mackowiak.io'}/${path ?? ''}`
+        `${origin ?? 'https://mackowiak.io'}/${path ?? ''}`,
     );
+}
+
+export function getRequiredEnvVarFromObject(
+    obj: Record<string, string | undefined>,
+    key: string,
+) {
+    const value = obj[key];
+
+    if (!value) {
+        throw new Error(`${key} is a required env variable`);
+    }
+
+    return value;
+}
+
+export function getRequiredServerEnvVar(key: string) {
+    return getRequiredEnvVarFromObject(process.env, key);
 }
