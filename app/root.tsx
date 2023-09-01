@@ -105,7 +105,7 @@ function App() {
                     ssrTheme={Boolean(data.requestInfo.session.theme)}
                 />
             </head>
-            <body className="bg-white dark:bg-slate-800">
+            <body className="bg-neutral-50 dark:bg-neutral-900">
                 <Outlet />
                 <ScrollRestoration />
                 <Scripts />

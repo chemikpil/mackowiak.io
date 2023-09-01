@@ -12,4 +12,4 @@ My place in the internet
 
 ---
 
-👨‍💻Made with ❤️ by [@chemikpil](https://twitter.com/chemikpil)
+👨‍💻Made️ by [@chemikpil](https://twitter.com/chemikpil)
