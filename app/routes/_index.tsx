@@ -9,6 +9,8 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div></div>
+    <div className="text-9xl">
+      Michał Maćkowiak
+    </div>
   );
 }
