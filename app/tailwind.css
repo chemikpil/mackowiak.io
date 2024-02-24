@@ -8,9 +8,11 @@
         --foreground: 207 15% 12%;
     }
 
-    .dark {
-        --background: 207 15% 12%;
-        --foreground: 40 23% 97%;
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background: 207 15% 12%;
+            --foreground: 40 23% 97%;
+        }
     }
 
     body {

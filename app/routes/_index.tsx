@@ -1,16 +1,16 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { MetaFunction } from '@remix-run/node'
 
 export const meta: MetaFunction = () => {
-  return [
-    { title: "Michal Mackowiak" },
-    { name: "description", content: "Michał Maćkowiak - Frontend Engineer / Hobbyist Photographer / Traveler / Gamer" },
-  ];
-};
+	return [
+		{ title: 'Michal Mackowiak' },
+		{
+			name: 'description',
+			content:
+				'Michał Maćkowiak - Frontend Engineer / Hobbyist Photographer / Traveler / Gamer',
+		},
+	]
+}
 
 export default function Index() {
-  return (
-    <div className="text-9xl">
-      Michał Maćkowiak
-    </div>
-  );
+	return <div className="text-9xl">Michał Maćkowiak</div>
 }
