@@ -13,6 +13,7 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 import { ClientHintCheck, getHints } from '~/utils/client-hints'
 import { cn } from '~/utils/cn-merge'
 import './tailwind.css'
+import { Header } from '~/components/header'
 
 export function links() {
 	const preloadedFonts = [
@@ -58,7 +59,13 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<Outlet />
+				<div>
+					<Header />
+					<main>
+						<Outlet />
+					</main>
+					{/*Footer*/}
+				</div>
 				<ScrollRestoration />
 				<Scripts />
 			</body>
