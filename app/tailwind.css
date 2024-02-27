@@ -33,12 +33,24 @@
     :root {
         --background: 40 23% 97%;
         --foreground: 207 15% 12%;
+
+        --accent: 34 69% 60%;
+        --accent-foreground: 40 23% 97%;
+
+        --border: 0 0% 82%;
+        --muted: 0 0% 43%
     }
 
     @media (prefers-color-scheme: dark) {
         :root {
             --background: 207 15% 12%;
             --foreground: 40 23% 97%;
+
+            --accent: 34 79% 66%;
+            --accent-foreground: 40 23% 97%;
+
+            --border: 220 2% 28%;
+            --muted: 220 3% 55%
         }
     }
 
