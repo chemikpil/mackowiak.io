@@ -11,8 +11,24 @@ import {
 import type { LoaderFunctionArgs } from '@remix-run/node'
 
 import { ClientHintCheck, getHints } from '~/utils/client-hints'
-import './tailwind.css'
 import { cn } from '~/utils/cn-merge'
+import './tailwind.css'
+
+export function links() {
+	const preloadedFonts = [
+		'lexend-deca.woff2',
+		'lexend-deca-latin-ext.woff2',
+		'lexend-deca-latin.woff2',
+	]
+	return [
+		...preloadedFonts.map(font => ({
+			rel: 'preload',
+			as: 'font',
+			href: `/fonts/${font}`,
+			crossOrigin: 'anonymous',
+		})),
+	]
+}
 
 export function loader({ request }: LoaderFunctionArgs) {
 	return json({
