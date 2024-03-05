@@ -16,6 +16,7 @@ import { Header } from '~/components/header'
 import { Footer } from '~/components/footer'
 
 import './tailwind.css'
+import { Menu } from '~/components/menu'
 
 export function links() {
 	const preloadedFonts = [
@@ -63,7 +64,8 @@ export default function App() {
 			<body>
 				<div className="flex h-full flex-col">
 					<Header />
-					<main className="flex-1">
+					<main className="flex flex-1 place-items-center">
+						<Menu />
 						<Outlet />
 					</main>
 					<Footer />
