@@ -4,13 +4,13 @@ const menu = [
 	{ name: 'Home', href: '/' },
 	{ name: 'About', href: '/about' },
 	{ name: 'Career', href: '/career' },
-	{ name: 'Photographer', href: '/photographer' },
+	{ name: 'Photo', href: '/photographer' },
 	{ name: 'Contact', href: '/contact' },
 ]
 
 export function Menu() {
 	return (
-		<nav className="w-24">
+		<nav className="hidden w-24 md:block">
 			<ul className="flex flex-col place-items-center">
 				{menu.map((item, index) => (
 					<li key={item.name}>
