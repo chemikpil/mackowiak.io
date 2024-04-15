@@ -60,12 +60,7 @@ export default function App() {
 				<Links />
 			</head>
 			<body>
-				<div className="flex h-full flex-col">
-					<Header />
-					<main className="flex flex-1 place-items-center">
-						<Outlet />
-					</main>
-				</div>
+				<Outlet />
 				<ScrollRestoration />
 				<Scripts />
 			</body>
