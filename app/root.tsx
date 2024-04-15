@@ -12,11 +12,9 @@ import type { LoaderFunctionArgs } from '@remix-run/node'
 
 import { ClientHintCheck, getHints } from '~/utils/client-hints'
 import { cn } from '~/utils/cn-merge'
-import { Header } from '~/components/header'
-import { Footer } from '~/components/footer'
 
 import './tailwind.css'
-import { Menu } from '~/components/menu'
+import { Header } from '~/components/header'
 
 export function links() {
 	const preloadedFonts = [
@@ -65,10 +63,8 @@ export default function App() {
 				<div className="flex h-full flex-col">
 					<Header />
 					<main className="flex flex-1 place-items-center">
-						<Menu />
 						<Outlet />
 					</main>
-					<Footer />
 				</div>
 				<ScrollRestoration />
 				<Scripts />

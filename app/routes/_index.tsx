@@ -2,7 +2,7 @@ import type { MetaFunction } from '@remix-run/node'
 
 export const meta: MetaFunction = () => {
 	return [
-		{ title: 'Michal Mackowiak' },
+		{ title: 'Michal Maćkowiak' },
 		{
 			name: 'description',
 			content:
@@ -12,5 +12,5 @@ export const meta: MetaFunction = () => {
 }
 
 export default function Index() {
-	return null
+	return <p>hello</p>
 }
