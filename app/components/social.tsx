@@ -1,4 +1,5 @@
 import type { SVGProps } from 'react'
+import { cn } from '~/utils/cn-merge'
 
 function Twitter(props: SVGProps<SVGSVGElement>) {
 	return (
@@ -56,9 +57,10 @@ function Github(props: SVGProps<SVGSVGElement>) {
 
 type SocialProps = {
 	size?: number
+	className?: string
 }
 
-export function Social({ size = 16 }: SocialProps) {
+export function Social({ size = 16, className }: SocialProps) {
 	const links = [
 		{
 			name: 'twitter',
@@ -78,10 +80,10 @@ export function Social({ size = 16 }: SocialProps) {
 	]
 
 	return (
-		<ul className="flex gap-4">
+		<ul className={cn('flex gap-4', className)}>
 			{links.map(link => (
 				<li
-					className="text-muted transition hover:text-foreground"
+					className="text-foreground/80 hover:text-foreground transition"
 					key={link.name}
 				>
 					<a

@@ -1,6 +1,7 @@
 import { Logo } from '~/components/logo'
 import { Title } from '~/components/title'
 import { Who } from '~/components/who'
+import { Social } from '~/components/social'
 
 export function Header() {
 	return (
@@ -12,6 +13,7 @@ export function Header() {
 				<p className="text-1xl md:text-4xl lg:text-6xl">Hi 👋, I'm</p>
 				<Title />
 				<Who />
+				<Social size={32} className="gap-8" />
 			</div>
 		</header>
 	)
