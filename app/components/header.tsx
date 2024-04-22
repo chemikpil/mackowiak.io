@@ -22,7 +22,7 @@ export function Header() {
 				<Who />
 				<Social
 					size={iconSize}
-					className={cn('gap-4', lg && 'gap-8', md && 'gap-6')}
+					className={cn(lg ? 'gap-8' : md ? 'gap-6' : 'gap-4')}
 				/>
 			</div>
 		</header>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import {
 	AnimatePresence,
 	motion,
@@ -52,6 +52,8 @@ function Item({
 export function Who() {
 	const [current, setCurrent] = useState(0)
 	const [height, setHeight] = useState(0)
+	const time = useRef<number | null>(null)
+
 	const animatedValue = useSpring(current, { bounce: 0 })
 	const lg = useMediaQuery(breakpoints.lg)
 	const md = useMediaQuery(breakpoints.md)
@@ -65,11 +67,16 @@ export function Who() {
 	}, [current])
 
 	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrent(current => current + 1)
-		}, 2000)
+		const playAnimation = (timestamp: number) => {
+			if (!time.current || timestamp - time.current > 3000) {
+				time.current = timestamp
+				setCurrent(current => current + 1)
+			}
 
-		return () => clearInterval(interval)
+			requestAnimationFrame(playAnimation)
+		}
+
+		requestAnimationFrame(playAnimation)
 	}, [])
 
 	return (
