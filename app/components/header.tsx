@@ -2,8 +2,15 @@ import { Logo } from '~/components/logo'
 import { Title } from '~/components/title'
 import { Who } from '~/components/who'
 import { Social } from '~/components/social'
+import { breakpoints, useMediaQuery } from '~/hooks/useMediaQuery'
+import { cn } from '~/utils/cn-merge'
 
 export function Header() {
+	const lg = useMediaQuery(breakpoints.lg)
+	const md = useMediaQuery(breakpoints.md)
+
+	const iconSize = lg ? 32 : md ? 24 : 16
+
 	return (
 		<header className="flex h-full flex-col pb-24">
 			<div className="flex place-items-center justify-center py-6 px-10">
@@ -13,7 +20,10 @@ export function Header() {
 				<p className="text-1xl md:text-4xl lg:text-6xl">Hi 👋, I'm</p>
 				<Title />
 				<Who />
-				<Social size={32} className="gap-8" />
+				<Social
+					size={iconSize}
+					className={cn('gap-4', lg && 'gap-8', md && 'gap-6')}
+				/>
 			</div>
 		</header>
 	)
