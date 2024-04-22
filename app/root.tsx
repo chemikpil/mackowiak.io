@@ -14,7 +14,7 @@ import { ClientHintCheck, getHints } from '~/utils/client-hints'
 import { cn } from '~/utils/cn-merge'
 
 import './tailwind.css'
-import { Header } from '~/components/header'
+import { Hero } from '~/components/hero'
 
 export function links() {
 	const preloadedFonts = [

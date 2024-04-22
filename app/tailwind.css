@@ -42,6 +42,8 @@
 
 		--border: 0 0% 88%;
 		--muted: 0 0% 82%;
+
+		--header-height: 96px;
 	}
 
 	.dark {

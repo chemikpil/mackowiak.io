@@ -56,11 +56,11 @@ function Github(props: SVGProps<SVGSVGElement>) {
 }
 
 type SocialProps = {
-	size?: number
 	className?: string
+	iconClassName?: string
 }
 
-export function Social({ size = 16, className }: SocialProps) {
+export function Social({ className, iconClassName }: SocialProps) {
 	const links = [
 		{
 			name: 'twitter',
@@ -91,7 +91,7 @@ export function Social({ size = 16, className }: SocialProps) {
 						target="_blank"
 						className="m-auto inline-flex h-8 w-8 place-items-center justify-center"
 					>
-						<link.icon width={size} height={size} />
+						<link.icon className={cn('h-4 w-4', iconClassName)} />
 					</a>
 				</li>
 			))}

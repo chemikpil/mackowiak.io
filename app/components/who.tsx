@@ -1,13 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import {
-	AnimatePresence,
-	motion,
-	MotionValue,
-	useSpring,
-	useTransform,
-} from 'framer-motion'
+import { motion, MotionValue, useSpring, useTransform } from 'framer-motion'
 
-import { useMediaQuery, breakpoints } from '~/hooks/useMediaQuery'
+import { breakpoints, useMediaQuery } from '~/hooks/useMediaQuery'
 
 const items = [
 	'👨🏻‍💻 Frontend Engineer',
@@ -17,15 +11,14 @@ const items = [
 	'⚽️ Football Fan',
 ]
 
-function Item({
-	mv,
-	index,
-	height,
-}: {
-	mv: MotionValue
-	index: number
-	height: number
-}) {
+function Item({ mv, index }: { mv: MotionValue; index: number }) {
+	const [height, setHeight] = useState(48)
+	const md = useMediaQuery(breakpoints.md)
+
+	useEffect(() => {
+		setHeight((md ? 32 : 28) + 16)
+	}, [md])
+
 	let y = useTransform(mv, latest => {
 		const length = items.length
 		const placedValue = latest % length
@@ -40,10 +33,7 @@ function Item({
 	})
 
 	return (
-		<motion.p
-			style={{ y }}
-			className="absolute p-2 text-xl md:text-2xl lg:text-4xl"
-		>
+		<motion.p style={{ y }} className="absolute p-2 text-xl md:text-3xl">
 			{items[index]}
 		</motion.p>
 	)
@@ -51,16 +41,9 @@ function Item({
 
 export function Who() {
 	const [current, setCurrent] = useState(0)
-	const [height, setHeight] = useState(0)
 	const time = useRef<number | null>(null)
 
 	const animatedValue = useSpring(current, { bounce: 0 })
-	const lg = useMediaQuery(breakpoints.lg)
-	const md = useMediaQuery(breakpoints.md)
-
-	useEffect(() => {
-		setHeight((lg ? 40 : md ? 32 : 28) + 16)
-	}, [])
 
 	useEffect(() => {
 		animatedValue.set(current)
@@ -81,9 +64,9 @@ export function Who() {
 
 	return (
 		<div className="w-full overflow-hidden">
-			<div style={{ height }} className="relative flex w-full justify-center">
+			<div className="relative flex h-11 w-full justify-center md:h-12">
 				{items.map((_, index) => (
-					<Item mv={animatedValue} index={index} key={index} height={height} />
+					<Item mv={animatedValue} index={index} key={index} />
 				))}
 			</div>
 		</div>
