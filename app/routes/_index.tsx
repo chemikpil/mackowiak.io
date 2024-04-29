@@ -3,6 +3,7 @@ import { Hero } from '~/components/hero/hero'
 import { Header } from '~/components/header'
 import { Introduction } from '~/pages/introduction'
 import { Career } from '~/pages/career'
+import { Footer } from '~/pages/footer'
 
 export const meta: MetaFunction = () => {
 	return [
@@ -19,9 +20,9 @@ export default function Index() {
 	return (
 		<div className="flex min-h-full flex-col">
 			<Header />
-			<main className="w-full">
+			<main className="w-full space-y-40">
 				<Introduction />
-				<div className="h-[500px]"></div>
+				<Footer />
 			</main>
 		</div>
 	)
